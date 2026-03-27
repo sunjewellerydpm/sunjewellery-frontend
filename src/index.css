@@ -1,0 +1,272 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    /* Luxury Dark Theme - Royal Aesthetic */
+    --background: 0 0% 4%;
+    --foreground: 45 100% 52%;
+
+    --card: 340 72% 42%;
+    --card-foreground: 45 30% 95%;
+
+    --popover: 0 0% 6%;
+    --popover-foreground: 45 30% 95%;
+
+    /* Royal Gold Primary */
+    --primary: 42 70% 55%;
+    --primary-foreground: 0 0% 4%;
+
+    /* Deep Charcoal Secondary */
+    --secondary: 0 0% 12%;
+    --secondary-foreground: 45 30% 90%;
+
+    /* Muted Gold Accents */
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 100%;
+
+    /* Champagne Accent */
+    --accent: 38 50% 75%;
+    --accent-foreground: 0 0% 4%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 45 20% 20%;
+    --input: 0 0% 15%;
+    --ring: 42 70% 55%;
+
+    --radius: 0rem;
+
+    /* Custom Luxury Colors */
+    --gold: 42 70% 55%;
+    --gold-light: 45 60% 75%;
+    --gold-dark: 38 60% 35%;
+    --champagne: 38 40% 85%;
+    --ivory: 45 30% 95%;
+    --onyx: 0 0% 8%;
+    --charcoal: 0 0% 12%;
+
+    /* Slide transition timing */
+    --slide-duration: 1.5s;
+    --fade-duration: 2s;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 0 0% 4%;
+    --foreground: 45 30% 95%;
+    --card: 0 0% 6%;
+    --card-foreground: 45 30% 95%;
+    --popover: 0 0% 6%;
+    --popover-foreground: 45 30% 95%;
+    --primary: 42 70% 55%;
+    --primary-foreground: 0 0% 4%;
+    --secondary: 0 0% 12%;
+    --secondary-foreground: 45 30% 90%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 45 15% 60%;
+    --accent: 38 50% 75%;
+    --accent-foreground: 0 0% 4%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 45 20% 20%;
+    --input: 0 0% 15%;
+    --ring: 42 70% 55%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    border-color: hsl(var(--border));
+  }
+
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-family: 'Cormorant Garamond', serif;
+  }
+}
+
+@layer components {
+  .font-script {
+    font-family: 'Bonheur Royale', cursive;
+  }
+
+  .font-serif {
+    font-family: 'Cormorant Garamond', serif;
+  }
+}
+
+@layer utilities {
+  /* Slow cinematic fade up animation */
+  @keyframes fade-up-slow {
+    0% {
+      opacity: 0;
+      transform: translateY(60px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fade-out-slow {
+    0% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(-30px);
+    }
+  }
+
+  /* Image morphism transition */
+  @keyframes morph-in {
+    0% {
+      opacity: 0;
+      transform: scale(1.15);
+      filter: blur(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+      filter: blur(0px);
+    }
+  }
+
+  @keyframes morph-out {
+    0% {
+      opacity: 1;
+      transform: scale(1);
+      filter: blur(0px);
+    }
+    100% {
+      opacity: 0;
+      transform: scale(0.95);
+      filter: blur(15px);
+    }
+  }
+
+  /* Ken Burns slow zoom */
+  @keyframes ken-burns {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(1.08);
+    }
+  }
+
+  .animate-fade-up-slow {
+    animation: fade-up-slow 2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  .animate-fade-out-slow {
+    animation: fade-out-slow 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  .animate-morph-in {
+    animation: morph-in 1.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  .animate-morph-out {
+    animation: morph-out 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  .animate-ken-burns {
+    animation: ken-burns 12s ease-out forwards;
+  }
+
+  /* Staggered delays for text elements */
+  .delay-100 { animation-delay: 100ms; }
+  .delay-200 { animation-delay: 200ms; }
+  .delay-300 { animation-delay: 300ms; }
+  .delay-400 { animation-delay: 400ms; }
+  .delay-500 { animation-delay: 500ms; }
+  .delay-600 { animation-delay: 600ms; }
+  .delay-700 { animation-delay: 700ms; }
+  .delay-800 { animation-delay: 800ms; }
+
+  /* Hide scrollbar while maintaining scroll functionality */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.text-main-content {
+  color: hsl(46, 100%, 41%);
+}
+.text-main-heading{
+  color: hsl(36, 100%, 41%);
+}
+.text-accent{
+  color: black;
+}
+
+/* Tailwind v4 theme configuration */
+@theme {
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+  
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+  
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  
+  --color-gold: hsl(var(--gold));
+  --color-gold-light: hsl(var(--gold-light));
+  --color-gold-dark: hsl(var(--gold-dark));
+  --color-champagne: hsl(var(--champagne));
+  --color-ivory: hsl(var(--ivory));
+  --color-onyx: hsl(var(--onyx));
+  --color-charcoal: hsl(var(--charcoal));
+  
+  --font-family-script: 'Bonheur Royale', cursive;
+  --font-family-serif: 'Cormorant Garamond', serif;
+  
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+}
