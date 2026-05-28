@@ -8,7 +8,7 @@ import gentsbraceletsImg from "@/assets/collection-bracelets2.jpeg";
 import gentsringsImg from "@/assets/collection-rings1.jpeg";
 import ladiesringsImg from "@/assets/collection-rings2.jpeg";
 import earringsImg from "@/assets/collection-earrings.jpeg";
-import chokersImg from "../assets/chokers.jpeg"
+import chokersImg from "../assets/chokers.jpeg";
 
 const collections = [
   { name: "Chains", description: "Elegant daily wear and premium designs", image: chainsImg, category: "Chains" },
