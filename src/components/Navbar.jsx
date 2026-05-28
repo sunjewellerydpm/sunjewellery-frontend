@@ -50,11 +50,11 @@ const Navbar = () => {
             {/* Logo - Centered */}
             <div className="flex-1 flex justify-center">
               <div className="flex flex-col items-center gap-1">
-                <img
+                <a href="/"><img
                   src="https://res.cloudinary.com/dktx1ebxg/image/upload/v1768282931/logo_ibjz9b.png"
                   alt="SUN Jewellery"
                   className="h-16 pt-3"
-                />
+                /></a>
                 <p className={`text-xs font-serif italic whitespace-nowrap ${isScrolled ? "text-black" : "text-accent/80"}`}>
                   Where Purity meets Precision
                 </p>
