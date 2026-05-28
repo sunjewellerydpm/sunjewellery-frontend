@@ -154,7 +154,7 @@ const ProductDetail = () => {
                   <img
                     src={product.images[selectedImageIndex]}
                     alt={product.name}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-contain"
                   />
                 ) : (
                   <span className="text-9xl text-accent/20">✦</span>
@@ -366,20 +366,32 @@ Please provide pricing and ordering details. Thank you!`;
                     key={relatedProduct.id}
                     className="group relative bg-white border border-accent/20 rounded-lg overflow-hidden hover:border-accent/50 hover:shadow-lg transition-all duration-300 text-left"
                   >
-                    <div
-                      className="aspect-square bg-gradient-to-br from-accent/5 to-transparent flex items-center justify-center overflow-hidden cursor-pointer"
-                      onClick={() => navigate(`/products/${relatedProduct.id}`)}
-                    >
-                      {relatedProduct.images && relatedProduct.images.length > 0 ? (
-                        <img
-                          src={relatedProduct.images[0]}
-                          alt={relatedProduct.name}
-                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                        />
-                      ) : (
-                        <span className="text-6xl text-accent/20">✦</span>
-                      )}
-                    </div>
+                   <div className="relative aspect-square flex items-center justify-center overflow-hidden p-6">
+  
+  {/* Blurred Background */}
+  {product.images && product.images.length > 0 && (
+    <div
+      className="absolute inset-0 bg-cover bg-center scale-110 blur-2xl opacity-75"
+      style={{
+        backgroundImage: `url(${product.images[0]})`,
+      }}
+    />
+  )}
+
+  {/* Optional Overlay */}
+  <div className="absolute inset-0 bg-white/40" />
+
+  {/* Main Image */}
+  {product.images && product.images.length > 0 ? (
+    <img
+      src={product.images[0]}
+      alt={product.name}
+      className="relative z-10 max-w-full max-h-full object-contain group-hover:scale-105 transition-transform duration-500"
+    />
+  ) : (
+    <span className="relative z-10 text-6xl text-accent/20">✦</span>
+  )}
+</div>
                     <div className="p-6">
                       <h3 className="text-xl font-serif text-accent mb-2 font-semibold">
                         {relatedProduct.name}
