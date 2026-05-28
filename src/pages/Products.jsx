@@ -164,17 +164,32 @@ const Products = () => {
                     onClick={() => handleViewDetails(product.id)}
                     className="group relative cursor-pointer bg-white border border-accent/20 rounded-lg overflow-hidden hover:border-accent/50 hover:shadow-lg transition-all duration-300"
                   >
-                    <div className="aspect-square bg-gradient-to-br from-accent/5 to-transparent flex items-center justify-center overflow-hidden">
-                      {product.images && product.images.length > 0 ? (
-                        <img
-                          src={product.images[0]}
-                          alt={product.name}
-                          className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
-                        />
-                      ) : (
-                        <span className="text-6xl text-accent/20">✦</span>
-                      )}
-                    </div>
+                    <div className="relative aspect-square flex items-center justify-center overflow-hidden p-6">
+  
+  {/* Blurred Background */}
+  {product.images && product.images.length > 0 && (
+    <div
+      className="absolute inset-0 bg-cover bg-center scale-110 blur-2xl opacity-25"
+      style={{
+        backgroundImage: `url(${product.images[0]})`,
+      }}
+    />
+  )}
+
+  {/* Optional Overlay */}
+  <div className="absolute inset-0 bg-white/40" />
+
+  {/* Main Image */}
+  {product.images && product.images.length > 0 ? (
+    <img
+      src={product.images[0]}
+      alt={product.name}
+      className="relative z-10 max-w-full max-h-full object-contain group-hover:scale-105 transition-transform duration-500"
+    />
+  ) : (
+    <span className="relative z-10 text-6xl text-accent/20">✦</span>
+  )}
+</div>
                     <div className="p-6">
                       <h3 className="text-xl font-serif text-accent mb-2 font-semibold">
                         {product.name || `Premium Collection ${product.id}`}
