@@ -8,7 +8,7 @@ import gentsbraceletsImg from "@/assets/collection-bracelets2.jpeg";
 import gentsringsImg from "@/assets/collection-rings1.jpeg";
 import ladiesringsImg from "@/assets/collection-rings2.jpeg";
 import earringsImg from "@/assets/collection-earrings.jpeg";
-import chokersImg from "../assets/chokers.png";
+import chokersImg from "../assets/chokers.jpeg";
 
 const collections = [
   { name: "Chains", description: "Elegant daily wear and premium designs", image: chainsImg, category: "Chains" },
@@ -19,7 +19,7 @@ const collections = [
   { name: "Studs & Earrings", description: "Lightweight and festive collections", image: earringsImg, category: "Studs & Earrings" },
   { name: "Gents Bracelets", description: "Stylish designs for a modern look", image: gentsbraceletsImg, category: "Gents Bracelets" },
   { name: "Gents Rings", description: "Perfect blend of tradition and trend", image: gentsringsImg, category: "Gents Rings" },
-  { name: "Chokers", description: "Elegant choker collection", image: chokersImg, category: "chokers" }
+  { name: "Chokers", description: "Elegant choker collection", image: chokersImg, category: "Chokers" }
 ];
 
 const CollectionSection = () => {
