@@ -366,14 +366,14 @@ Please provide pricing and ordering details. Thank you!`;
                     key={relatedProduct.id}
                     className="group relative bg-white border border-accent/20 rounded-lg overflow-hidden hover:border-accent/50 hover:shadow-lg transition-all duration-300 text-left"
                   >
-                   <div className="relative aspect-square flex items-center justify-center overflow-hidden p-6">
-  
+      <div className="relative aspect-square flex items-center justify-center overflow-hidden p-6">
+
   {/* Blurred Background */}
-  {product.images && product.images.length > 0 && (
+  {relatedProduct.images && relatedProduct.images.length > 0 && (
     <div
-      className="absolute inset-0 bg-cover bg-center scale-110 blur-2xl opacity-75"
+      className="absolute inset-0 bg-cover bg-center scale-110 blur-2xl opacity-100"
       style={{
-        backgroundImage: `url(${product.images[0]})`,
+        backgroundImage: `url(${relatedProduct.images[0]})`,
       }}
     />
   )}
@@ -382,10 +382,10 @@ Please provide pricing and ordering details. Thank you!`;
   <div className="absolute inset-0 bg-white/40" />
 
   {/* Main Image */}
-  {product.images && product.images.length > 0 ? (
+  {relatedProduct.images && relatedProduct.images.length > 0 ? (
     <img
-      src={product.images[0]}
-      alt={product.name}
+      src={relatedProduct.images[0]}
+      alt={relatedProduct.name}
       className="relative z-10 max-w-full max-h-full object-contain group-hover:scale-105 transition-transform duration-500"
     />
   ) : (
