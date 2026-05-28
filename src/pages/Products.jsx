@@ -169,7 +169,7 @@ const Products = () => {
   {/* Blurred Background */}
   {product.images && product.images.length > 0 && (
     <div
-      className="absolute inset-0 bg-cover bg-center scale-110 blur-2xl opacity-25"
+      className="absolute inset-0 bg-cover bg-center scale-110 blur-2xl opacity-100"
       style={{
         backgroundImage: `url(${product.images[0]})`,
       }}
