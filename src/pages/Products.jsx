@@ -18,6 +18,7 @@ const categories = [
   { name: "Gents Rings", endpoint: `${API_BASE}/category/gents-rings` },
   { name: "Studs & Earrings", endpoint: `${API_BASE}/category/studs-earrings` },
   { name: "Mangalyam", endpoint: `${API_BASE}/category/mangalyam` },
+  { name: "Chokers", endpoint: `${API_BASE}/category/chokers` },
 ];
 
 const Products = () => {
