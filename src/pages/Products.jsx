@@ -164,12 +164,12 @@ const Products = () => {
                     onClick={() => handleViewDetails(product.id)}
                     className="group relative cursor-pointer bg-white border border-accent/20 rounded-lg overflow-hidden hover:border-accent/50 hover:shadow-lg transition-all duration-300"
                   >
-                    <div className="h-[320px] object-contain bg-gradient-to-br from-accent/5 to-transparent flex items-center justify-center overflow-hidden">
+                    <div className="aspect-square bg-gradient-to-br from-accent/5 to-transparent flex items-center justify-center overflow-hidden">
                       {product.images && product.images.length > 0 ? (
                         <img
                           src={product.images[0]}
                           alt={product.name}
-                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                          className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
                         />
                       ) : (
                         <span className="text-6xl text-accent/20">✦</span>
