@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 @layer base {
   :root {
@@ -101,7 +102,8 @@
     color: hsl(var(--foreground));
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    font-family: 'Cormorant Garamond', serif;
+    font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
   }
 }
 
